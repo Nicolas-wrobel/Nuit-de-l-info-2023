@@ -1,0 +1,31 @@
+# Dépendances
+/node_modules
+
+# Fichiers de configuration contenant des informations sensibles
+.env
+
+# Fichiers et dossiers générés lors de la compilation/build
+/dist
+/build
+
+# Logs et bases de données
+*.log
+*.sql
+*.sqlite
+
+# Fichiers système spécifiques à l'OS
+.DS_Store # pour macOS
+Thumbs.db # pour Windows
+
+# Autres fichiers/dossiers à ignorer
+/.vscode/ # Si vous utilisez Visual Studio Code
+/temp
+/backup
+
+# Fichiers spécifiques à des IDEs ou éditeurs de texte
+.idea/ # pour les produits JetBrains
+*.sublime-workspace
+*.sublime-project
+
+# Fichiers de cache
+.cache
