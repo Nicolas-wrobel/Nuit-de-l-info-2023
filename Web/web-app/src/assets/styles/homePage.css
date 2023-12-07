@@ -1,0 +1,26 @@
+.home-page {
+    position: relative;
+    width: 100%;
+  }
+  
+  .steps-bar {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    height: 100%;
+    /* Autres styles pour la barre */
+  }
+  
+  .step {
+    /* Styles pour chaque point de la barre */
+  }
+  
+  .step.active {
+    /* Styles pour le point actif */
+  }
+  
+  .step-content {
+    /* Styles pour le contenu de chaque étape */
+  }
+  
