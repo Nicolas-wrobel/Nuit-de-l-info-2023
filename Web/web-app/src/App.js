@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import MorePage from './pages/MorePage';
 import './assets/styles/App.css';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/more" element={<MorePage />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
