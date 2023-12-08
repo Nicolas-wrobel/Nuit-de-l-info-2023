@@ -11,7 +11,33 @@
   .step {
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+  }
+
+  .step-navigation-left {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .step-navigation-right {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .step-content-left {
+    margin-right: 200px;
+  }
+
+  .step-content-right {
+    margin-left: 200px;
+  }
+  
+  .step-text {
+    transition: transform 0.3s ease;
+  }
+  
+  .step-text:hover {
+    transform: scale(1.05);
   }
   

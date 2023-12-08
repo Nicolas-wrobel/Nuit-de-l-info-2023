@@ -2,11 +2,20 @@ import React, { useRef, useEffect } from 'react';
 import { Stepper, Step, StepLabel, IconButton } from '@mui/material';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import ImageComponent from './ImageComponent';
 import '../assets/styles/homePage.css';
+
+import constatImage from '../assets/images/constat.png';
+import evolutionImage from '../assets/images/evolution.png';
+import causesImage from '../assets/images/causes.png';
+import consequencesImage from '../assets/images/conséquences.png';
+import conseilsImage from '../assets/images/conseils.png';
+import solutionImage from '../assets/images/solutions.png';
+
 
 const VerticalStepper = () => {
   const [activeStep, setActiveStep] = React.useState(0);
-  const steps = ['Étape 1', 'Étape 2', 'Étape 3', 'Étape 4', 'Étape 5'];
+  const steps = ['', '', '', '', '', ''];
 
   const isScrolling = useRef(false);
 
@@ -79,17 +88,30 @@ const VerticalStepper = () => {
     };
   }, [activeStep, steps.length]);
 
+  const stepData = [
+    { path: constatImage, description: "Constat sur le climat actuelle et son dégradement", texte: "Texte de l'image 1" },
+    { path: evolutionImage, description: "Évolution sur le climat actuelle", texte: "Texte de l'image 2" },
+    { path: causesImage, description: "Causes du réchauffement climatique et du dégradement du climat", texte: "Texte de l'image 3" },
+    { path: consequencesImage, description: "Conséquences de son dégradement", texte: "Texte de l'image 4" },
+    { path: conseilsImage, description: "Conseils pour lutter pour le climat", texte: "Texte de l'image 5" },
+    { path: solutionImage, description: "Solution pour améliorer le climmat à son échelle", texte: "Texte de l'image 6" }
+  ];
 
   return (
     <Stepper activeStep={activeStep} orientation="vertical" className="stepper">
       {steps.map((label, index) => (
         <Step key={label} className="step">
-          <div className="step-navigation">
-          {index > 0 && (
-              <IconButton onClick={() => changeStep(index - 1)}>
-                <ArrowUpwardIcon />
-              </IconButton>
-            )}
+          <div className="step-navigation-left">
+            <div className="step-content-left">
+            {index % 2 === 0 ? (
+              <ImageComponent path={stepData[index].path} description={stepData[index].description} onClick={() => {}}/>
+              ) : <p className="step-text">{stepData[index].texte}</p>}
+            </div>
+            {index >= 0 && (
+                <IconButton onClick={() => changeStep(index - 1)}>
+                  <ArrowUpwardIcon />
+                </IconButton>
+              )}
           </div>
           <StepLabel
             StepIconProps={{
@@ -98,12 +120,17 @@ const VerticalStepper = () => {
           >
             {label}
           </StepLabel>
-          <div className="step-navigation">
-            {index < steps.length - 1 && (
+          <div className="step-navigation-right">
+            {index <= steps.length - 1 && (
               <IconButton onClick={() => changeStep(index + 1)}>
                 <ArrowDownwardIcon />
               </IconButton>
             )}
+            <div className="step-content-right">
+            {index % 2 !== 0 ? (
+              <ImageComponent path={stepData[index].path} description={stepData[index].description }onClick={() => {}} />
+            ) : <p className="step-text">{stepData[index].texte}</p>}
+            </div>
           </div>
         </Step>
       ))}
