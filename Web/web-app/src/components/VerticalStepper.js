@@ -11,6 +11,9 @@ import causesImage from '../assets/images/causes.png';
 import consequencesImage from '../assets/images/conséquences.png';
 import conseilsImage from '../assets/images/conseils.png';
 import solutionImage from '../assets/images/solutions.png';
+import Boxbox from '../components/boxbox';
+import VraiOuFaux from './vraiOuFaux';
+// import VraiOuFaux from '../components/vraiOuFaux'
 
 
 const VerticalStepper = ({ activeStep, setActiveStep }) => {
@@ -106,6 +109,8 @@ const VerticalStepper = ({ activeStep, setActiveStep }) => {
               <ImageComponent path={stepData[index].path} description={stepData[index].description} onClick={() => {}}/>
               ) : <div className="step-text">{stepData[index].texte}</div>}
             </div>
+            <Boxbox index={index}/>
+            <VraiOuFaux index={index}/>
             {index >= 0 && (
                 <IconButton className='step-arrow' onClick={() => changeStep(index - 1)}>
                   <ArrowUpwardIcon />

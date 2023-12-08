@@ -76,19 +76,22 @@ const ImageBackgroundDiv = ({ paramListe  }) => {
             <div onClick={() => {updateCart2(cart2 + 1)}} className="divImg2" style={divStyle2}>
                 <h2 className='texteImage'>{txt2}</h2>
             </div>
-            <button onClick={() => {updateCart2(0);updateCart1(0);noUpdate(0);updateList(getRandomImage())}}>suivant</button>
+            <button className='butSuivant' onClick={() => {updateCart2(0);updateCart1(0);noUpdate(0);updateList(getRandomImage())}}>suivant</button>
         </div>
     )
 }
 
-const boxbox = () => {
+const boxbox = (index) => {
     let randomImage = getRandomImage()
-    return (
-        <div>
-            {/* <h1>test</h1> */}
-            <ImageBackgroundDiv paramListe={randomImage}/>
-        </div>
-    );
+    if(index['index']==2){
+        console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", index['index'])
+        return (
+            <div>
+                {/* <h1>test</h1> */}
+                <ImageBackgroundDiv paramListe={randomImage}/>
+            </div>
+        );
+    }
 };
 
 export default boxbox;

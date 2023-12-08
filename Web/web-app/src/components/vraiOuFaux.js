@@ -8,10 +8,11 @@ const listeRep = ["La dernière décennie a été considérée comme la plus cha
 , "Si chacun se mobilise, change son mode de vie, utilise des énergies propres, diminue sa consommation, boycotte les entreprises polluantes… des résultats peuvent intervenir. Le changement climatique est provoqué par l'homme, lui seul peut influer sur le destin de la planète."]
 const listeValide = [1, 2, 1, 1]
 
-const VraiOuFaux = () => {
+const VraiOuFaux = (index) => {
     const [cart, updateCart] = useState(0)
     const [rep, updaterep] = useState(0)
     const [result, updateresult] = useState(0)
+    if(index['index']==0){
     let color1 = 'rgb(0, 208, 255)'
     let color2 = 'rgb(0, 208, 255)'
     let curQ = ''
@@ -55,9 +56,10 @@ const VraiOuFaux = () => {
             </div>
             <div style={divStyleV} onClick={() => {updaterep(1); updateresult(2)}} className='child child1'><h1>Vrai</h1></div>
             <div style={divStyleF} onClick={() => {updaterep(1); updateresult(1)}} className='child child2'><h1>Faux</h1></div>
-            <button onClick={() => {if(cart==listeQuestions.length-1){updateCart(0)}else{updateCart(cart + 1)}; updaterep(0); updateresult(0)}}>suivant</button>
+            <button className='butVF' onClick={() => {if(cart==listeQuestions.length-1){updateCart(0)}else{updateCart(cart + 1)}; updaterep(0); updateresult(0)}}>suivant</button>
         </div>
     );
+    }
 };
 
 export default VraiOuFaux;
