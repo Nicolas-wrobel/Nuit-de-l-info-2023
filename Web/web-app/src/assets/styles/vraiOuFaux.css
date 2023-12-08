@@ -1,0 +1,32 @@
+.base{
+    width: 40.5em;
+    height: 22.5em;
+    background-color: rgb(255, 255, 255);
+    border: 0.5em solid;
+    border-color: black;
+    text-align: center;
+}
+.child {
+    display: inline-block;
+    border: 1px solid rgb(0, 208, 255);
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    margin-top: 2%;
+}
+.child1{
+    float: left;
+    width: 44%;
+    height: 17%;
+    background-color: rgb(0, 208, 255);
+}
+.child2{
+    float: right;
+    width: 44%;
+    height: 17%;
+    background-color: rgb(0, 208, 255);
+}
+.question{
+    height: 14em;
+    /* border: 0.5em solid;
+    border-color: black; */
+}
