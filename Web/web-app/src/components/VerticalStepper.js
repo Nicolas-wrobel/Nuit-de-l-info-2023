@@ -11,6 +11,9 @@ import causesImage from '../assets/images/causes.png';
 import consequencesImage from '../assets/images/conséquences.png';
 import conseilsImage from '../assets/images/conseils.png';
 import solutionImage from '../assets/images/solutions.png';
+import Boxbox from '../components/boxbox';
+import VraiOuFaux from './vraiOuFaux';
+// import VraiOuFaux from '../components/vraiOuFaux'
 
 
 const VerticalStepper = ({ activeStep, setActiveStep }) => {
@@ -23,8 +26,11 @@ const VerticalStepper = ({ activeStep, setActiveStep }) => {
   
     isScrolling.current = true;
     setActiveStep(newStep);
+    const headerHeight = 1900;
+    const scrollToPosition = newStep * window.innerHeight + headerHeight;
+  
     window.scrollTo({
-      top: newStep * window.innerHeight,
+      top: scrollToPosition,
       behavior: 'smooth'
     });
   
@@ -88,12 +94,12 @@ const VerticalStepper = ({ activeStep, setActiveStep }) => {
   }, [activeStep, steps.length]);
 
   const stepData = [
-    { path: constatImage, description: "Constat sur le climat actuelle et son dégradement", texte: "Texte de l'image 1" },
-    { path: evolutionImage, description: "Évolution sur le climat actuelle", texte: "Texte de l'image 2" },
-    { path: causesImage, description: "Causes du réchauffement climatique et du dégradement du climat", texte: "Texte de l'image 3" },
-    { path: consequencesImage, description: "Conséquences de son dégradement", texte: "Texte de l'image 4" },
-    { path: conseilsImage, description: "Conseils pour lutter pour le climat", texte: "Texte de l'image 5" },
-    { path: solutionImage, description: "Solution pour améliorer le climmat à son échelle", texte: "Texte de l'image 6" }
+    { path: constatImage, description: "Constat sur le climat actuelle et son dégradement", texte: "Constat sur le climat actuel" },
+    { path: evolutionImage, description: "Évolution sur le climat actuelle", texte: "Évolution du climat sur Terre" },
+    { path: causesImage, description: "Causes du réchauffement climatique et du dégradement du climat", texte: "Causes du réchauffement climatique" },
+    { path: consequencesImage, description: "Conséquences de son dégradement", texte: "Conséquences sur la Terre" },
+    { path: conseilsImage, description: "Conseils pour lutter pour le climat", texte: "Conseils pour lutter pour le climat" },
+    { path: solutionImage, description: "Solution pour améliorer le climmat à son échelle", texte: "Solutions pour améliorer le climat à son échelle" }
   ];
 
   return (
@@ -106,6 +112,8 @@ const VerticalStepper = ({ activeStep, setActiveStep }) => {
               <ImageComponent path={stepData[index].path} description={stepData[index].description} onClick={() => {}}/>
               ) : <div className="step-text">{stepData[index].texte}</div>}
             </div>
+            <Boxbox index={index}/>
+            <VraiOuFaux index={index}/>
             {index >= 0 && (
                 <IconButton className='step-arrow' onClick={() => changeStep(index - 1)}>
                   <ArrowUpwardIcon />
