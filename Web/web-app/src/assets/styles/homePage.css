@@ -21,17 +21,31 @@
     z-index: 1;
   }
   
-  .step:not(:last-child)::after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    left: 49.51%;
-    top: 50%;
-    width: 10px;
-    height: 950px;
-    background-color: grey;
-  }
-    
+    @media screen and (max-width: 1600px) {
+      .step:not(:last-child)::after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        left: 49.45%;
+        top: 50%;
+        width: 10px;
+        height: 760px;
+        background-color: grey;
+      }
+    }
+
+    @media screen and (min-width: 1600px) {
+      .step:not(:last-child)::after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        left: 49.51%;
+        top: 50%;
+        width: 10px;
+        height: 950px;
+        background-color: grey;
+      }
+    }
 
   .step-icon {
     text-align: center;
