@@ -2,27 +2,29 @@
     background-color: #265073;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    
+    padding: 30px;
     position: fixed;
     width: 100%;
+    z-index: 1;
   }
 .footer {
   background-color: #265073;
   font-size: 20px;
   color: white;
-  padding: 20px;
+  padding: 30px;
 }
   .nav-link {
     margin: 0 15px;
-    font-size: 1.5em; /* Taille du texte */
-    font-family: Arial, sans-serif; /* Police simple */
-    color: white; /* Couleur du texte */
+    font-size: 1.3em;
+    font-family: Arial, sans-serif;
+    color: white;
     text-decoration: none;
     transition: transform 0.3s ease;
   }
   
   .nav-link:hover {
-    color: grey; /*Couleur au survol */
+    color: grey;
     transform: scale(1.1);
   }
   

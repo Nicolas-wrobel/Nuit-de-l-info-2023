@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Stepper, Step, StepLabel, IconButton } from '@mui/material';
+import { Stepper, Step, StepLabel, IconButton, StepConnector } from '@mui/material';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ImageComponent from './ImageComponent';
@@ -104,7 +104,7 @@ const VerticalStepper = ({ activeStep, setActiveStep }) => {
             <div className="step-content-left">
             {index % 2 === 0 ? (
               <ImageComponent path={stepData[index].path} description={stepData[index].description} onClick={() => {}}/>
-              ) : <p className="step-text">{stepData[index].texte}</p>}
+              ) : <div className="step-text">{stepData[index].texte}</div>}
             </div>
             {index >= 0 && (
                 <IconButton className='step-arrow' onClick={() => changeStep(index - 1)}>
@@ -112,13 +112,12 @@ const VerticalStepper = ({ activeStep, setActiveStep }) => {
                 </IconButton>
               )}
           </div>
-          <StepLabel
+          <StepLabel className='step-label'
             StepIconProps={{
-              style: { color: activeStep >= index ? 'green' : 'grey' },
+              style: { color: 'grey' },
               classes: { root: 'step-icon' }
             }}
           >
-            {label}
           </StepLabel>
           <div className="step-navigation-right">
             {index <= steps.length - 1 && (
@@ -129,7 +128,7 @@ const VerticalStepper = ({ activeStep, setActiveStep }) => {
             <div className="step-content-right">
             {index % 2 !== 0 ? (
               <ImageComponent path={stepData[index].path} description={stepData[index].description }onClick={() => {}} />
-            ) : <p className="step-text">{stepData[index].texte}</p>}
+            ) : <div className="step-text">{stepData[index].texte}</div>}
             </div>
           </div>
         </Step>

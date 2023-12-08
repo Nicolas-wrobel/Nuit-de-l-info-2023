@@ -3,7 +3,11 @@
     flex-direction: column;
     align-items: center;
   }
-  
+  .stepper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
   .stepper-container {
     width: 100%;
   }
@@ -11,23 +15,50 @@
   .step {
     height: 95vh;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
   }
+  
+  .step:not(:last-child)::after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    left: 49.51%;
+    top: 50%;
+    width: 10px;
+    height: 950px;
+    background-color: grey;
+  }
+    
 
   .step-icon {
-    width: 35px !important;
-    height: 35px !important;
+    text-align: center;
+    width: 50px !important;
+    height: 50px !important;
+    padding : 10px;
+  }
+
+  .step-label {
+    display: flex;
+    align-items: center;
   }
 
   .step-navigation-left {
     display: flex;
+    width: 100%;
+    align-items: center;
     flex-direction: row;
+    justify-content: flex-end;
   }
 
   .step-navigation-right {
     display: flex;
+    width: 100%;
+    align-items: center;
     flex-direction: row;
+    justify-content: flex-start;
   }
   
   .step-content-left {
@@ -39,6 +70,8 @@
   }
   
   .step-text {
+    font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2em;
     transition: transform 0.5s ease;
   }
   
@@ -63,6 +96,8 @@
 
   .step-arrow {
     transition: transform 0.5s ease!important;
+    height: 35px;
+    width: 35px;
   }
 
   .step-arrow:hover {
