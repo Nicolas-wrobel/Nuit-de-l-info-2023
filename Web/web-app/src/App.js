@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import MorePage from './pages/MorePage';
 import './assets/styles/App.css';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
