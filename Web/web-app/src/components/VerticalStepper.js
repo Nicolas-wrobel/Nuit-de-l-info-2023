@@ -94,12 +94,12 @@ const VerticalStepper = ({ activeStep, setActiveStep }) => {
   }, [activeStep, steps.length]);
 
   const stepData = [
-    { path: constatImage, description: "Constat sur le climat actuelle et son dégradement", texte: "Texte de l'image 1" },
-    { path: evolutionImage, description: "Évolution sur le climat actuelle", texte: "Texte de l'image 2" },
-    { path: causesImage, description: "Causes du réchauffement climatique et du dégradement du climat", texte: "Texte de l'image 3" },
-    { path: consequencesImage, description: "Conséquences de son dégradement", texte: "Texte de l'image 4" },
-    { path: conseilsImage, description: "Conseils pour lutter pour le climat", texte: "Texte de l'image 5" },
-    { path: solutionImage, description: "Solution pour améliorer le climmat à son échelle", texte: "Texte de l'image 6" }
+    { path: constatImage, description: "Constat sur le climat actuelle et son dégradement", texte: "Constat sur le climat actuel" },
+    { path: evolutionImage, description: "Évolution sur le climat actuelle", texte: "Évolution du climat sur Terre" },
+    { path: causesImage, description: "Causes du réchauffement climatique et du dégradement du climat", texte: "Causes du réchauffement climatique" },
+    { path: consequencesImage, description: "Conséquences de son dégradement", texte: "Conséquences sur la Terre" },
+    { path: conseilsImage, description: "Conseils pour lutter pour le climat", texte: "Conseils pour lutter pour le climat" },
+    { path: solutionImage, description: "Solution pour améliorer le climmat à son échelle", texte: "Solutions pour améliorer le climat à son échelle" }
   ];
 
   return (
