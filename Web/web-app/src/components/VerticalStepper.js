@@ -23,8 +23,11 @@ const VerticalStepper = ({ activeStep, setActiveStep }) => {
   
     isScrolling.current = true;
     setActiveStep(newStep);
+    const headerHeight = 1900;
+    const scrollToPosition = newStep * window.innerHeight + headerHeight;
+  
     window.scrollTo({
-      top: newStep * window.innerHeight,
+      top: scrollToPosition,
       behavior: 'smooth'
     });
   
