@@ -1,19 +1,28 @@
 .header {
-    background-color: transparent;
+    background-color: #265073;
     display: flex;
     justify-content: center;
-    padding: 10px 0;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
   }
-  
+.footer {
+  background-color: #265073;
+  font-size: 20px;
+  color: white;
+  padding: 20px;
+}
   .nav-link {
     margin: 0 15px;
     font-size: 1.5em; /* Taille du texte */
     font-family: Arial, sans-serif; /* Police simple */
-    color: #333; /* Couleur du texte */
+    color: white; /* Couleur du texte */
     text-decoration: none;
+    transition: transform 0.3s ease;
   }
   
   .nav-link:hover {
-    color: #0275d8; /* Couleur au survol */
+    color: grey; /*Couleur au survol */
+    transform: scale(1.1);
   }
   

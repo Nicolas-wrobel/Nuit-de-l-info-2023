@@ -13,8 +13,7 @@ import conseilsImage from '../assets/images/conseils.png';
 import solutionImage from '../assets/images/solutions.png';
 
 
-const VerticalStepper = () => {
-  const [activeStep, setActiveStep] = React.useState(0);
+const VerticalStepper = ({ activeStep, setActiveStep }) => {
   const steps = ['', '', '', '', '', ''];
 
   const isScrolling = useRef(false);
@@ -108,21 +107,22 @@ const VerticalStepper = () => {
               ) : <p className="step-text">{stepData[index].texte}</p>}
             </div>
             {index >= 0 && (
-                <IconButton onClick={() => changeStep(index - 1)}>
+                <IconButton className='step-arrow' onClick={() => changeStep(index - 1)}>
                   <ArrowUpwardIcon />
                 </IconButton>
               )}
           </div>
           <StepLabel
             StepIconProps={{
-              style: { color: activeStep >= index ? 'green' : 'grey' }
+              style: { color: activeStep >= index ? 'green' : 'grey' },
+              classes: { root: 'step-icon' }
             }}
           >
             {label}
           </StepLabel>
           <div className="step-navigation-right">
             {index <= steps.length - 1 && (
-              <IconButton onClick={() => changeStep(index + 1)}>
+              <IconButton className='step-arrow' onClick={() => changeStep(index + 1)}>
                 <ArrowDownwardIcon />
               </IconButton>
             )}
